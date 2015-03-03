@@ -4,7 +4,7 @@ Name:		libcdata
 # version from AC_INIT
 Version:	20150102
 %define	gitrev	1ae7a100d49d52a17b24c57efc941c9370be0ea8
-Release:	1
+Release:	2
 License:	LGPL v3+
 Group:		Libraries
 #Source0:	https://github.com/libyal/libcdata/archive/%{version}/%{name}-%{version}.tar.gz
