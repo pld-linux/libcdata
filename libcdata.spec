@@ -1,29 +1,27 @@
+# see m4/libcerror.m4
+%define		libcerror_ver	20120425
+# see m4/libcthreads.m4
+%define		libcthreads_ver	20160404
 Summary:	Library for cross-platform C generic data functions
 Summary(pl.UTF-8):	Biblioteka wieloplatformowych funkcji ogólnej obsługi danych w C
 Name:		libcdata
-# version from AC_INIT
-Version:	20150102
-%define	gitrev	1ae7a100d49d52a17b24c57efc941c9370be0ea8
-Release:	2
+Version:	20190112
+Release:	1
 License:	LGPL v3+
 Group:		Libraries
-#Source0:	https://github.com/libyal/libcdata/archive/%{version}/%{name}-%{version}.tar.gz
-Source0:	https://github.com/libyal/libcdata/archive/%{gitrev}/%{name}-%{version}.tar.gz
-# Source0-md5:	c85b2ddc9c585114a1c40f99df8b4f8c
-Patch0:		%{name}-system-libs.patch
+#Source0Download: https://github.com/libyal/libcdata/releases
+Source0:	https://github.com/libyal/libcdata/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
+# Source0-md5:	3aac4b2a0f927c0504ecfccfd4bb264c
 URL:		https://github.com/libyal/libcdata/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1.6
 BuildRequires:	gettext-tools >= 0.18.1
-BuildRequires:	libcerror-devel >= 20120425
-BuildRequires:	libcstring-devel >= 20120425
-BuildRequires:	libcthreads-devel >= 20130509
+BuildRequires:	libcerror-devel >= %{libcerror_ver}
+BuildRequires:	libcthreads-devel >= %{libcthreads_ver}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	sed >= 4.0
-Requires:	libcerror >= 20120425
-Requires:	libcstring >= 20120425
-Requires:	libcthreads >= 20130509
+Requires:	libcerror >= %{libcerror_ver}
+Requires:	libcthreads >= %{libcthreads_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,9 +36,8 @@ Summary:	Header files for libcdata library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libcdata
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libcerror-devel >= 20120425
-Requires:	libcstring-devel >= 20120425
-Requires:	libcthreads-devel >= 20130509
+Requires:	libcerror-devel >= %{libcerror_ver}
+Requires:	libcthreads-devel >= %{libcthreads_ver}
 
 %description devel
 Header files for libcdata library.
@@ -61,18 +58,17 @@ Static libcdata library.
 Statyczna biblioteka libcdata.
 
 %prep
-%setup -q -n %{name}-%{gitrev}
-%patch0 -p1
+%setup -q
 
 %build
 %{__gettextize}
-%{__sed} -i -e 's/ po\/Makefile.in//' configure.ac
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
 %configure
+
 %{__make}
 
 %install
