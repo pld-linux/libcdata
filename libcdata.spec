@@ -1,6 +1,5 @@
-# see m4/libcerror.m4
+# see m4/${libname}.m4 />= for required version of particular library
 %define		libcerror_ver	20120425
-# see m4/libcthreads.m4
 %define		libcthreads_ver	20160404
 Summary:	Library for cross-platform C generic data functions
 Summary(pl.UTF-8):	Biblioteka wieloplatformowych funkcji ogólnej obsługi danych w C
