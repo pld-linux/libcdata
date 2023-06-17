@@ -1,23 +1,23 @@
 # see m4/${libname}.m4 />= for required version of particular library
-%define		libcerror_ver	20120425
-%define		libcthreads_ver	20160404
+%define		libcerror_ver	20190308
+%define		libcthreads_ver	20190308
 Summary:	Library for cross-platform C generic data functions
 Summary(pl.UTF-8):	Biblioteka wieloplatformowych funkcji ogólnej obsługi danych w C
 Name:		libcdata
-Version:	20190112
+Version:	20230108
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libcdata/releases
 Source0:	https://github.com/libyal/libcdata/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	3aac4b2a0f927c0504ecfccfd4bb264c
+# Source0-md5:	5db04f3653677da444965f52e0cfd8aa
 URL:		https://github.com/libyal/libcdata/
-BuildRequires:	autoconf >= 2.59
+BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
-BuildRequires:	gettext-tools >= 0.18.1
+BuildRequires:	gettext-tools >= 0.21
 BuildRequires:	libcerror-devel >= %{libcerror_ver}
 BuildRequires:	libcthreads-devel >= %{libcthreads_ver}
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
 Requires:	libcerror >= %{libcerror_ver}
 Requires:	libcthreads >= %{libcthreads_ver}
