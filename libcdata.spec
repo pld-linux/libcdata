@@ -4,13 +4,13 @@
 Summary:	Library for cross-platform C generic data functions
 Summary(pl.UTF-8):	Biblioteka wieloplatformowych funkcji ogólnej obsługi danych w C
 Name:		libcdata
-Version:	20230108
+Version:	20240103
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libcdata/releases
 Source0:	https://github.com/libyal/libcdata/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	5db04f3653677da444965f52e0cfd8aa
+# Source0-md5:	de87cfb90704c81157c5c205dcb811cf
 URL:		https://github.com/libyal/libcdata/
 BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
