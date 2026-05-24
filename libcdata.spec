@@ -4,13 +4,13 @@
 Summary:	Library for cross-platform C generic data functions
 Summary(pl.UTF-8):	Biblioteka wieloplatformowych funkcji ogólnej obsługi danych w C
 Name:		libcdata
-Version:	20240414
+Version:	20260520
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libcdata/releases
 Source0:	https://github.com/libyal/libcdata/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	2c239707be6b1019d5f494fe0f26a706
+# Source0-md5:	4f9ad65ee4abb639b8c169bc275d68a4
 URL:		https://github.com/libyal/libcdata/
 BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
@@ -88,12 +88,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
-%attr(755,root,root) %{_libdir}/libcdata.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcdata.so.1
+%{_libdir}/libcdata.so.*.*.*
+%ghost %{_libdir}/libcdata.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libcdata.so
+%{_libdir}/libcdata.so
 %{_includedir}/libcdata
 %{_includedir}/libcdata.h
 %{_pkgconfigdir}/libcdata.pc
